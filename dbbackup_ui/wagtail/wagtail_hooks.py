@@ -1,4 +1,7 @@
-from django.conf.urls import url
+try:
+    from django.urls import re_path
+except ImportError:  # pragma: no cover - older Django fallback
+    from django.conf.urls import url as re_path
 
 try:
   from django.core.urlresolvers import reverse
@@ -26,5 +29,5 @@ def register_menu_item():
 @hooks.register('register_admin_urls')
 def urlconf():
   return [
-    url(r'^backup-database-and-media/$', BackupView.as_view(template_name='wagtail/backup_view.html'), name='wagtail_backup_view'),
+    re_path(r'^backup-database-and-media/$', BackupView.as_view(template_name='wagtail/backup_view.html'), name='wagtail_backup_view'),
   ]

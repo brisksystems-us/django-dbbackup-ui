@@ -2,6 +2,9 @@
 
 Django Database Backup UI is an extension of Django Database Backup (django-dbbackup: https://github.com/django-dbbackup/django-dbbackup) that allows you to backup database and media files via Django Admin interface. An additional dbbackup_ui.wagtail module provides support for Wagtail Admin.
 
+This fork includes compatibility updates for modern Django releases, including
+URL routing updates required by Django 4/5.
+
 ![demo](http://g.recordit.co/WP3nIX330M.gif)
 
 ## Supported versions

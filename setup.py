@@ -22,7 +22,9 @@ setup(
                  'dbbackup_ui'},
     include_package_data=True,
     install_requires=[
-        'django-dbbackup>=3.1.3,<3.3'
+        # Keep lower bound for historical compatibility and remove the upper
+        # pin so Django 5 compatible django-dbbackup releases can be used.
+        'django-dbbackup>=3.1.3'
     ],
     license="BSD license",
     zip_safe=False,

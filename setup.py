@@ -11,7 +11,7 @@ with open('HISTORY.md') as history_file:
 
 setup(
     name='django-dbbackup-ui',
-    version='0.2.1',
+    version='0.2.2',
     description="Backup database and media files via Django admin interface (includes Wagtail admin support)",
     long_description=readme + '\n\n' + history,
     author="Tim Kamanin",
@@ -22,9 +22,8 @@ setup(
                  'dbbackup_ui'},
     include_package_data=True,
     install_requires=[
-        # Keep lower bound for historical compatibility and remove the upper
-        # pin so Django 5 compatible django-dbbackup releases can be used.
-        'django-dbbackup>=3.1.3'
+        # Django 5 support in this fork targets the modern dbbackup API.
+        'django-dbbackup>=5.0'
     ],
     license="BSD license",
     zip_safe=False,
